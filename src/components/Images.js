@@ -3,6 +3,11 @@ import Dropdown from "./Dropdown";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Pagination from "./Pagination";
+// import "lightgallery.js/dist/css/lightgallery.css";
+// import LightGallery from "lightgallery/react";
+// import lgThumbnail from "lightgallery/plugins/thumbnail";
+// import lgZoom from "lightgallery/plugins/zoom";
+import { useEffect, useRef } from "react";
 
 function Images() {
   const list = [
@@ -25,6 +30,20 @@ function Images() {
       thumbnail: "https://picsum.photos/id/1019/250/150/",
     },
   ];
+  // const galleryRef = useRef();
+  // useEffect(() => {
+  //   const options = {
+  //     selector: ".images-item", // Class name of the gallery items
+  //     plugins: [lgThumbnail, lgZoom], // Include any additional plugins you need
+  //   };
+  //   LightGallery(galleryRef.current, options);
+  //   // Clean up the lightGallery when the component is unmounted
+  //   return () => {
+  //     if (galleryRef.current) {
+  //       galleryRef.current.destroy();
+  //     }
+  //   };
+  // }, []);
   return (
     <div className="images-section container">
       <Breadcrum name={"hinh anh - su kien"} />
@@ -73,6 +92,7 @@ function Images() {
               ></iframe>
             </div>
           </div>
+
           <Pagination />
         </div>
       </div>
